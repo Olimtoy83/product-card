@@ -11,27 +11,28 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-h1 {
+.title {
   font-size: 70px;
   font-weight: normal;
   color: #515076;
   text-align: center;
+  padding-top: 220px;
+  padding-bottom: 110px;
+  position: relative;
 }
 
-img {
-  width: 290px;
-  height: 245px;
+.product_image {
+  width: 100%;
   padding: 0 0 25px 0;
-}
-
-ul {
-  list-style: none;
 }
 
 .products {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  list-style: none;
+  gap: 45px;
+  margin: 0;
 }
 
 .product {
@@ -49,7 +50,7 @@ ul {
   color: #A5A3B9
 }
 
-.product-name {
+.product_name {
   font-size: 20px;
   font-weight: bold;
   color: #515076;
@@ -77,4 +78,13 @@ ul.compound {
 
 .price b {
   font-weight: bold;
+}
+
+.dandelions {
+  position: absolute;
+  top: 0px;
+  left: 85px;
+  z-index: -1;
+  width: 790px;
+  height: 697px;
 }
