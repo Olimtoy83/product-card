@@ -10,11 +10,20 @@
 
 <body>
 
-<main class="catalog">
+  <main class="catalog">
 
     <div class="container catalog__container">
       <img src="images/dandelions.png" alt="Фон с одуванчиками" class="catalog__background" />
-      <h1 class="catalog__title"> Выбери свой продукт</h1>
+      <h1 class="catalog__title" id="catalog-title"> Выбери свой продукт</h1>
+
+      <div class="button">
+        <button id="change-color-all-card-button"> Сменит цвет всех карточки </button>
+        <button id="change-color-first-card-button"> Сменит цвет первой карточки </button>
+        <button id="open-google-button"> Открыт страницу Google.com </button>
+        <button id="output-console-log"> Вывести сообщение в консоль </button>
+        <button class="toggle-color-button" id="toggle-color-button"> Переключатель цвета кнопки</button>
+      </div>
+
       <ul class="products">
         <li class="products__item card">
           <img src="images/moisturizing_mousse.png" alt="Увлажняющий мусс" width="290" height="245" />
@@ -128,6 +137,7 @@
       </ul>
     </div>
   </main>
+  <script src="main.js"></script>
 </body>
 
 </html>
