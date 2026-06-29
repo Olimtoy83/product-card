@@ -131,3 +131,16 @@ body {
   line-height: 24px;
   color: #515076;
 }
+
+.toggle-color-button {
+  background-color: #25b69192;
+}
+
+.toggle-color-button.active {
+  background-color: #c1ecea;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+}
