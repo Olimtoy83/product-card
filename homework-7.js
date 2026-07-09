@@ -5,20 +5,20 @@ const showTemperature = (temp, city) => {
 showTemperature(43, "Медина");
 
 const LIGHT_SPEED = 299792458;
-const compareToSpeedLight = (lightSpeed) => {
+const compareSpeed = (lightSpeed) => {
   if (lightSpeed > LIGHT_SPEED) console.log("Сверхсветовая скорость");
   else if (lightSpeed < LIGHT_SPEED) console.log("Субсветовая скорость");
   else console.log("Скорость света");
 }
 
-compareToSpeedLight(299792458);
-compareToSpeedLight(299792459);
-compareToSpeedLight(299792457);
+compareSpeed(299792458);
+compareSpeed(299792459);
+compareSpeed(299792457);
 
-let myProduct = "Финик";
+let myProduct = "Финики";
 let productPrice = 150;
 
-const tryBuyProduct = (budget) => {
+const BuyProduct = (budget) => {
   if (budget >= productPrice) {
     console.log(`${myProduct} приобретен. Спасибо за покупку!`);
   }
@@ -27,8 +27,8 @@ const tryBuyProduct = (budget) => {
   }
 }
 
-tryBuyProduct(200);
-tryBuyProduct(100);
+BuyProduct(200);
+BuyProduct(100);
 
 const connectionString = "";
 let isConnect = false;
