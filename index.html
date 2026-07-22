@@ -22,6 +22,7 @@
         <button id="open-google-button"> Открыт страницу Google.com </button>
         <button id="output-console-log"> Вывести сообщение в консоль </button>
         <button class="toggle-color-button" id="toggle-color-button"> Переключатель цвета кнопки</button>
+        <button class="reg-btn">Регистрация</button>
       </div>
 
       <ul class="products">
@@ -48,11 +49,82 @@
     </div>
 
   </main>
+  <footer class="footer">
+
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3 class="footer-description">Product Cards</h3>
+        <p class="footer-slogan">У нас самые лучшие продукты для кожи!</p>
+        <div class="social-icons">
+          <a href="#"><img src="images/tg-icon.svg" alt="телеграм"></a>
+          <a href="#"><img src="images/vk-icon.svg" alt="ВК"></a>
+        </div>
+      </div>
+
+      <div class="footer-subscribe">
+        <p class="subscribe-title">Подпишись на наши акции:</p>
+        <form class="subscribe-form">
+          <input class="subscribe-input" type="email" name="email" placeholder="Введите Email..." aria-label="Email"
+            required>
+          <button class="subscribe-btn" type="submit">Подписаться</button>
+        </form>
+      </div>
+
+      <nav class="footer-navigation">
+        <p class="navigation-title">Быстрые ссылки</p>
+        <ul class="navigation-menu">
+          <li class="footer-menu-item"><a href="#">Главная</a></li>
+          <li class="footer-menu-item"><a href="#">Магазины</a></li>
+          <li class="footer-menu-item"><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <p class="footer-copyright">www.product-cards.com©all right reserve</p>
+    </div>
+  </footer>
+
+  <div class="modal">
+
+    <div class="overlay">
+      <form class="reg-form">
+
+        <div class="modal-content">
+          <label for="firstname">Имя</label>
+          <input type="text" name="firstname" id="firstname" placeholder="Введите Имя" required>
+
+          <label for="lastname">Фамилия</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Введите Фамилию" required>
+
+          <label for="date">Дата рождения</label>
+          <input type="date" name="date" id="date" required>
+
+          <label for="login">Логин</label>
+          <input type="text" name="login" id="login" placeholder="Введите логин" required>
+
+          <label for="password">Пароль</label>
+          <input type="password" name="password" id="password" placeholder="Введите пароль" required>
+
+          <label for="repeatpassword">Повторите пароль</label>
+          <input type="password" name="repeatpassword" id="repeatpassword" placeholder="Повторите пароль" required>
+
+          <button class="close-btn" type="button">X</button>
+          <button class="sign-up" type="submit">Зарегистрироваться</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
   <script src="main.js"></script>
   <script src="homework-7.js"></script>
   <script src="homework-8.js"></script>
   <script src="homework-9.js" type="module"></script>
   <script src="homework-10.js" type="module"></script>
+  <script src="homework-11.js" type="module"></script>
 </body>
 
 </html>
