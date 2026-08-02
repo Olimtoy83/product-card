@@ -1,3 +1,5 @@
+import { registrationModal } from './Modal.js';
+import { registrationForm } from './Form.js';
 const subscribeForm = document.querySelector('.subscribe-form');
 const subscribeInput = document.querySelector('.subscribe-input');
 
@@ -11,18 +13,6 @@ subscribeForm.addEventListener('submit', function (event) {
   event.preventDefault();
   const formData = getFormData(subscribeForm);
   console.log(formData);
-});
-
-const regBtn = document.querySelector('.reg-btn');
-const modal = document.querySelector('.modal');
-const closeBtn = document.querySelector('.close-btn');
-
-regBtn.addEventListener('click', function () {
-  modal.classList.add('modal-showed');
-});
-
-closeBtn.addEventListener('click', function () {
-  modal.classList.remove('modal-showed');
 });
 
 let user;
