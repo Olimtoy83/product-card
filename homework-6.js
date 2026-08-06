@@ -1,22 +1,24 @@
 const productCard = document.querySelector('.products__item.card');
-const changeCardColorBtn = document.querySelector('.change-card-color-btn');
-const yellowColorsHash = '#F1C40F';
+
+const changeCardColorBtn = document.getElementById('change-color-first-card-button');
+const yellowColorsHash = '#76bbb3';
 
 changeCardColorBtn.addEventListener('click', () => {
   productCard.style.backgroundColor = yellowColorsHash;
 });
 
-
 const productCards = document.querySelectorAll('.products__item.card');
-const changeCardsColorBtn = document.querySelector('.change-cards-color-btn');
-const aquaColorsHash = '#00FFFF';
+const changeCardsColorBtn = document.getElementById('change-color-all-card-button');
+const aquaColorsHash = '#3fc5c5';
 
 changeCardsColorBtn.addEventListener('click', () => {
-  productCards.forEach((card) => card.style.backgroundColor = aquaColorsHash);
+  productCards.forEach(card => {
+    card.style.backgroundColor = aquaColorsHash;
+  });
 });
 
 
-const openGoogleBtn = document.querySelector('.open-google');
+const openGoogleBtn = document.getElementById('open-google-button');
 const googleURL = "https://google.com";
 
 openGoogleBtn.addEventListener('click', openGoogle);
@@ -32,7 +34,7 @@ function openGoogle() {
 };
 
 
-const outputLogBtn = document.querySelector('.output-console-log');
+const outputLogBtn = document.getElementById('output-console-log');
 
 outputLogBtn.addEventListener('click', () => outputConsoleLog('ДЗ №6'));
 
@@ -42,14 +44,14 @@ function outputConsoleLog(message) {
 };
 
 
-const catalogTitle = document.querySelector('.catalog__title');
+const catalogTitle = document.getElementById('catalog-title');
 
 catalogTitle.addEventListener('mouseenter', (event) => {
   console.log(event.target.textContent);
 });
 
 
-const toggleBtn = document.querySelector('.toggle-color-button');
+const toggleBtn = document.getElementById('toggle-color-button');
 
 toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.toggle('active');
