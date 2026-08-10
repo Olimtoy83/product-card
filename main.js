@@ -1,44 +1,59 @@
-const productCards = document.querySelectorAll('.card');
-const changeColorAllCardButton = document.querySelector('#change-color-all-card-button');
-const greenColorHash = "#c1ecea";
-const blueColorHash = "#25b69192";
+import './comments.js';
+import './products-cards.js';
+import './homework-7.js';
+import './homework-8.js';
+import './homework-9.js';
+import './homework-10.js';
+import './homework-11.js';
+import './homework-6.js';
 
-changeColorAllCardButton.addEventListener('click', () => {
-  productCards.forEach(card => {
-    card.style.backgroundColor = greenColorHash;
-  });
-});
+class Car {
+  constructor(brand, model, maxSpeed, color) {
+    this.brand = brand;
+    this.model = model;
+    this.maxSpeed = maxSpeed;
+    this.color = color;
+  }
 
-const firstProductCards = document.querySelector('.card')
-const changeColorFirstCardButton = document.querySelector('#change-color-first-card-button');
-
-changeColorFirstCardButton.addEventListener('click', () => {
-  firstProductCards.style.backgroundColor = blueColorHash;
-});
-
-const openGoogleButton = document.querySelector('#open-google-button');
-openGoogleButton.addEventListener('click', openGoogle);
-function openGoogle() {
-  const unswer = confirm('Вы уверены, что хотите открыть страницу Google.com?');
-  if (unswer === true) {
-    window.open('https://www.google.com');
+  start() {
+    console.log(`${this.brand}, ${this.model}, ${this.maxSpeed}, ${this.color}, is started.`)
   }
 }
 
-const outputConsoleLogButton = document.querySelector('#output-console-log');
-outputConsoleLogButton.addEventListener('click', () => outputConsoleLog("Дз №6"));
-
-function outputConsoleLog(message) {
-  alert("Дз №6");
-  console.log(message);
+class SportCar extends Car {
+  constructor(brand, model, maxSpeed, color, acceleration) {
+    super(brand, model, maxSpeed, color)
+    this.acceleration = acceleration;
+  }
+  boost() {
+    console.log(`${this.brand}, ${this.model}, ${this.maxSpeed}, ${this.color}, ${this.acceleration}`)
+  }
 }
 
-const catalogTitle = document.querySelector('#catalog-title');
-catalogTitle.addEventListener('mouseenter', (event) => {
-  console.log(event.target.textContent);
-});
+class Truck extends Car {
+  constructor(brand, model, maxSpeed, color, loadCapacity) {
+    super(brand, model, maxSpeed, color)
+    this.loadCapacity = loadCapacity;
+  }
+  loadCargo() {
+    console.log(`${this.brand}, ${this.model}, ${this.maxSpeed}, ${this.color}, ${this.loadCapacity}`)
+  }
+}
 
-const toggleBtn = document.querySelector('#toggle-color-button');
-toggleBtn.addEventListener('click', () => {
-  toggleBtn.classList.toggle('active');
-});
+class ElectricCar extends Car {
+  constructor(brand, model, maxSpeed, color, batteryLevel) {
+    super(brand, model, maxSpeed, color)
+    this.batteryLevel = batteryLevel;
+  }
+  charge() {
+    console.log(`${this.brand}, ${this.model}, ${this.maxSpeed}, ${this.color}, ${this.batteryLevel}`)
+  }
+}
+
+const volvo = new Truck('Volvo', 'FH16', '180km/h', 'Black', '325.000кг');
+volvo.start()
+volvo.loadCargo()
+
+const lixiang = new ElectricCar('Lixiang', 'Li L9', '190km/h', 'Gray', '102kWh');
+lixiang.start()
+lixiang.charge()
