@@ -6,6 +6,7 @@ import './homework-9.js';
 import './homework-10.js';
 import './homework-11.js';
 import './homework-6.js';
+import './homework-13.js';
 
 class Car {
   constructor(brand, model, maxSpeed, color) {
