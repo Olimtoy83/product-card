@@ -83,5 +83,5 @@ const fresh = new Fresh('Апельсиновый свежевыжатый', 300
 const cafe = new Cafe('Андалусия', 'г.Хасавюрт ул.Воробьева 111');
 
 console.log(cafe.getInfoCafe());
-console.log(cafe.orderDrink(lemonade));
+cafe.orderDrink(lemonade);
 console.log(fresh.getInfo());
