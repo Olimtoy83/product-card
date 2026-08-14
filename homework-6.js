@@ -17,7 +17,6 @@ changeCardsColorBtn.addEventListener('click', () => {
   });
 });
 
-
 const openGoogleBtn = document.getElementById('open-google-button');
 const googleURL = "https://google.com";
 
@@ -33,7 +32,6 @@ function openGoogle() {
   }
 };
 
-
 const outputLogBtn = document.getElementById('output-console-log');
 
 outputLogBtn.addEventListener('click', () => outputConsoleLog('ДЗ №6'));
@@ -43,13 +41,11 @@ function outputConsoleLog(message) {
   console.log(message)
 };
 
-
 const catalogTitle = document.getElementById('catalog-title');
 
 catalogTitle.addEventListener('mouseenter', (event) => {
   console.log(event.target.textContent);
 });
-
 
 const toggleBtn = document.getElementById('toggle-color-button');
 

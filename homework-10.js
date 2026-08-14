@@ -1,9 +1,7 @@
 import { products } from './products-cards.js';
 
-
 const productTemplate = document.getElementById('product-template');
 const productsList = document.querySelector('.products');
-
 
 function getCardsCount() {
   const input = prompt("Сколько карточек отобразить? От 1 до 5");
