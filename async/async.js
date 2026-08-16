@@ -1,35 +1,32 @@
-function loadUsers() {
+async function loadUsers() {
   const usersJSON = localStorage.getItem("users");
 
   if (usersJSON === null) {
-    fetch("users.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Ошибка при загрузке данных");
-        }
+    try {
+      const response = await fetch("users.json");
 
-        return response.json();
-      })
-      .then((data) => {
-        setTimeout(() => {
-          renderUsers(data.users);
-        }, 3000);
+      if (!response.ok) {
+        throw new Error("Ошибка при загрузке данных");
+      }
 
-        localStorage.setItem("users", JSON.stringify(data));
-      })
-      .catch((error) => {
-        console.error(error);
+      const data = await response.json();
 
-        const container = document.getElementById("app");
-        container.innerHTML = "Ошибка при загрузке данных";
-      });
+      setTimeout(() => {
+        renderUsers(data.users);
+      }, 3000);
+
+      localStorage.setItem("users", JSON.stringify(data));
+    } catch (error) {
+      console.error(error);
+
+      const container = document.getElementById("app");
+      container.innerHTML = "Ошибка при загрузке данных";
+    }
   } else {
     const users = JSON.parse(usersJSON);
     renderUsers(users.users);
   }
 }
-
-loadUsers();
 
 function renderUsers(users) {
   const container = document.getElementById("app");
@@ -50,8 +47,7 @@ function renderUsers(users) {
     const cardElement = cardClone.querySelector(".user-card");
 
     deleteBtn.addEventListener("click", () => {
-      const usersJSON = localStorage.getItem("users");
-      const usersData = JSON.parse(usersJSON);
+      const usersData = JSON.parse(localStorage.getItem("users"));
 
       usersData.users = usersData.users.filter((item) => {
         return item.id !== user.id;
@@ -69,16 +65,9 @@ function renderUsers(users) {
 const deleteAllBtn = document.getElementById("delete-all-btn");
 
 deleteAllBtn.addEventListener("click", () => {
-  const usersJSON = localStorage.getItem("users");
+  const usersData = JSON.parse(localStorage.getItem("users"));
 
-  if (!usersJSON) {
-    alert("Карточек нет");
-    return;
-  }
-
-  const usersData = JSON.parse(usersJSON);
-
-  if (usersData.users.length === 0) {
+  if (!usersData || usersData.users.length === 0) {
     alert("Все карточки уже удалены");
     return;
   }
@@ -87,45 +76,47 @@ deleteAllBtn.addEventListener("click", () => {
 
   localStorage.setItem("users", JSON.stringify(usersData));
 
-  const container = document.getElementById("app");
-  container.innerHTML = "";
+  document.getElementById("app").innerHTML = "";
 });
 
 const getAllBtn = document.getElementById("get-all-btn");
 
-getAllBtn.addEventListener("click", () => {
+getAllBtn.addEventListener("click", async () => {
   const existingCards = document.querySelectorAll(".user-card");
 
-  fetchUsersData()
-    .then((data) => {
-      if (!data) {
-        return;
-      }
+  const data = await fetchUsersData();
 
-      if (data.users.length === existingCards.length) {
-        alert("Все карточки уже отображены");
-      } else {
-        renderUsers(data.users);
-        localStorage.setItem("users", JSON.stringify(data));
-      }
-    });
+  if (!data) {
+    return;
+  }
+
+  if (data.users.length === existingCards.length) {
+    alert("Все карточки уже отображены");
+  } else {
+    renderUsers(data.users);
+    localStorage.setItem("users", JSON.stringify(data));
+  }
 });
 
-function fetchUsersData() {
-  return fetch("users.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Ошибка данных");
-      }
+async function fetchUsersData() {
+  try {
+    const response = await fetch("users.json");
 
-      return response.json();
-    })
-    .catch((error) => {
-      console.error(error);
+    if (!response.ok) {
+      throw new Error("Ошибка данных");
+    }
 
-      const container = document.getElementById("app");
-      container.innerHTML = "Ошибка при загрузке данных";
+    return await response.json();
+  } catch (error) {
+    console.error(error);
 
-      return null;
-    });
+    const container = document.getElementById("app");
+    container.innerHTML = "Ошибка при загрузке данных";
+
+    return null;
+  }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadUsers();
+});
