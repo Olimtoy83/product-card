@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: #fafafa;
+  color: #1a1a1a;
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.toolbar button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.user-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.delete-card-btn {
+  margin-top: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Olim",
+      "surname": "Tursunov",
+      "email": "Olimtoy83@gmail.com",
+      "age": 43,
+      "city": "Madina"
+    },
+    {
+      "id": "2",
+      "name": "Mahmud",
+      "surname": "Tursunov",
+      "email": "Mahmud@gmail.com",
+      "age": 42,
+      "city": "Tashkent"
+    },
+    {
+      "id": "3",
+      "name": "Murod",
+      "surname": "Tursunov",
+      "email": "Murod@gmail.com",
+      "age": 40,
+      "city": "Tashkent"
+    }
+  ]
+}
